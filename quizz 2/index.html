@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="index.css" href="index.css">
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <form id="quizForm">
+        <div>
+            <p>1. What is the capital of France?</p>
+            <input type="radio" name="q1" value="A"> A) London<br>
+            <input type="radio" name="q1" value="B"> B) Paris<br>
+            <input type="radio" name="q1" value="C"> C) Berlin<br>
+        </div>
+        <div>
+            <p>2. What is the capital of algeria?</p>
+            <input type="radio" name="q2" value="A"> A) annaba<br>
+            <input type="radio" name="q2" value="B"> B) alger<br>
+            <input type="radio" name="q2" value="C"> C) stif<br>
+        </div>
+        <div>
+            <p>3. What is the capital of japan?</p>
+            <input type="radio" name="q3" value="A"> A) pikine<br>
+            <input type="radio" name="q3" value="B"> B) tokio<br>
+            <input type="radio" name="q3" value="C"> C)  bruxel<br>
+        </div>
+        <button type="button" onclick="submitQuiz()">Submit</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function submitQuiz() {
+            // Get the form element
+            var form = document.getElementById("quizForm");
+            var score = 0;
+
+            // Loop through each question
+            for (var i = 1; i <= 3; i++) {
+                // Get the selected answer for each question
+                var answer = form.elements["q" + i].value;
+                // Check if the answer is correct
+                if (answer === "B") {
+                    score++;
+                }
+            }
+
+            // Display the result
+            var resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "Your score: " + score + "/3";
+        }
+    </script>
+</body>
+</html>

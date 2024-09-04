@@ -1,0 +1,23 @@
+async function runTasks() {
+  try {
+    console.log('Starting tasks...');
+    
+
+    const result1 = await asyncTask('Task 1', 2000);
+    console.log('Result of Task 1:', result1);
+
+  
+    const result2 = await asyncTask('Task 2', 1500);
+    console.log('Result of Task 2:', result2);
+
+ 
+    const result3 = await asyncTask('Task 3', 1000);
+    console.log('Result of Task 3:', result3);
+
+    console.log('All tasks completed!');
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+runTasks();
